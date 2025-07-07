@@ -311,6 +311,7 @@ E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\refs\System.Xml.XPath.XDocume
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\refs\WindowsBase.dll
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\Azure.Core.dll
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\Azure.Identity.dll
+E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\BCrypt.Net-Next.dll
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\Humanizer.dll
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 E:\Projects\helpdesk\helpdesk.api\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll

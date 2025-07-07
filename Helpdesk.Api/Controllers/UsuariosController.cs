@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Helpdesk.Api.Models;
 using Helpdesk.Api.Data;
+using BCrypt.Net;
 using Microsoft.AspNetCore.Http;
 
 namespace Helpdesk.Api.Controllers
@@ -37,26 +38,34 @@ namespace Helpdesk.Api.Controllers
         [HttpPost]
         public IActionResult Create(Usuario usuario)
         {
-            // Verifica se o email já existe
+            // 1. Remove o erro de email existente antes de revalidar
+            ModelState.Remove("Email");
+
+            // 2. Verifica se o novo email já existe
             var emailExistente = _context.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
             if (emailExistente != null)
             {
                 ModelState.AddModelError("Email", "Este email já está em uso");
             }
 
-            // Agora valida se todos os campos estão OK
+            // 3. Validação manual da confirmação de senha
+            if (usuario.Senha != usuario.ConfirmarSenha)
+            {
+                ModelState.AddModelError("ConfirmarSenha", "As senhas não coincidem");
+            }
+
             if (ModelState.IsValid)
             {
-                usuario.Tipo = TipoUsuario.Membro; // Força novo usuário como Membro
+                usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
+                usuario.ConfirmarSenha = null;
+                usuario.Tipo = TipoUsuario.Membro;
                 _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
                 return RedirectToAction("Login", "Usuarios");
             }
 
-            // Se houver erro, volta para o formulário
             return View(usuario);
         }
-
 
         [HttpPost]
         public IActionResult Delete(int id)
