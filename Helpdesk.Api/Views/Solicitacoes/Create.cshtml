@@ -1,0 +1,28 @@
+@model Helpdesk.Api.Models.Solicitacao
+
+@{
+    ViewData["Title"] = "Nova Solicitação";
+}
+
+<h2>Nova Solicitação</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Titulo" class="control-label"></label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao" class="control-label"></label>
+        <textarea asp-for="Descricao" class="form-control"></textarea>
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <input type="hidden" name="UsuarioEmail" value="@Context.Session.GetString("UsuarioEmail")" />
+    <div class="form-group mt-2">
+        <input type="submit" value="Enviar" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

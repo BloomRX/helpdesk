@@ -10,12 +10,15 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=helpdesk.db"));  // Banco SQLite
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
+builder.Services.AddControllersWithViews(); // necessário para controllers e views
+
 var app = builder.Build();
 ///////////////////////////////////////
 
 
-// 🔧 Configuração do pipeline HTTP
+// Configuração do pipeline HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
