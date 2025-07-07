@@ -1,15 +1,30 @@
 @model Helpdesk.Api.Models.Usuario
 
-<h2>Login</h2>
-
+<style>
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 <form asp-action="Login" method="post">
-    <label>Email:</label>
+<div>
+    <label>Email:</label><br>
+</div>
+<div>
     <input type="email" name="Email" required />
     <br />
-
-    <label>Senha:</label>
+</div>
+<br>
+<div>
+    <label>Senha:</label><br>
+</div>
+<div>
     <input type="password" name="Senha" required />
     <br />
-
+<br>
+</div>
+<div>
     <button type="submit">Entrar</button>
+</div>
 </form>
