@@ -31,5 +31,19 @@ namespace Helpdesk.Api.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var usuario = _context.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            _context.Usuarios.Remove(usuario);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index"); // ou outra view
+        }
     }
 }

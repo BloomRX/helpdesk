@@ -1,23 +1,28 @@
-@model List<Helpdesk.Api.Models.Usuario>
+@model IEnumerable<Helpdesk.Api.Models.Usuario>
 
-<h2>Usuários Cadastrados</h2>
+<h2>Lista de Usuários</h2>
 
-<table>
-    <thead>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+    </tr>
+
+    @foreach (var usuario in Model)
+    {
         <tr>
-            <th>Nome</th>
-            <th>Email</th>
+            <td>@usuario.Nome</td>
+            <td>@usuario.Email</td>
+            <td>
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@usuario.Id" />
+                    <button type="submit" onclick="return confirm('Deseja excluir este usuário?')">Excluir</button>
+                </form>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in Model)
-        {
-            <tr>
-                <td>@usuario.Nome</td>
-                <td>@usuario.Email</td>
-            </tr>
-        }
-    </tbody>
+    }
 </table>
+
 
 <a href="/Usuarios/Create">Cadastrar novo usuário</a>
