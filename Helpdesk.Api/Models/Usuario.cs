@@ -2,12 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Helpdesk.Api.Models
 {
-    public enum TipoUsuario
-    {
-        Membro,
-        Admin
-    }
-
     public class Usuario
     {
         public int Id { get; set; }
