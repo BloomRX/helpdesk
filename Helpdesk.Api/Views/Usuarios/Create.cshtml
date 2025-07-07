@@ -1,44 +1,40 @@
 @model Helpdesk.Api.Models.Usuario
-
-<center>
-    <form asp-action="Create" method="post">
-        <h2>Cadastro</h2>
-
-        <div>
-            <label asp-for="Nome"></label>
-            <br>
-            <input asp-for="Nome" />
-            <span asp-validation-for="Nome" style="color:red"></span>
-        </div>
-
-        <div>
-            <label asp-for="Email"></label>
-            <br>
-            <input asp-for="Email" type="email" />
-            <span asp-validation-for="Email" style="color:red"></span>
-            @if (ViewData.ModelState["Email"]?.Errors.Count > 0)
-            {
-                <span style="color:red">@ViewData.ModelState["Email"].Errors.First().ErrorMessage</span>
-            }
-        </div>
-
-        <div>
-            <label asp-for="Senha"></label>
-            <br>
-            <input asp-for="Senha" type="password" />
-            <span asp-validation-for="Senha" style="color:red"></span>
-        </div>
-
-        <div>
-            <label asp-for="ConfirmarSenha"></label>
-            <br>
-            <input asp-for="ConfirmarSenha" type="password" />
-            <span asp-validation-for="ConfirmarSenha" style="color:red"></span>
-        </div>
-
-        <input type="submit" value="Cadastro">
-    </form>
-</center>
+<style = Css>
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<form asp-action="Create" method="post">
+    <div>
+        <label>Nome</label><br>
+    </div>
+    <div>
+        <input asp-for="Nome" />
+        <span asp-validation-for="Nome" style="color:red"></span>
+    </div>
+<br>
+    <div>
+        <label>Email</label><br>
+    </div>
+    <div>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" style="color:red"></span>
+    </div>
+<br>
+    <div>
+        <label>Senha</label><br>
+    </div>
+    <div>
+        <input asp-for="Senha" type="password" />
+        <span asp-validation-for="Senha" style="color:red"></span>
+    </div>
+<br>
+<div>
+    <button type="submit">Cadastrar</button>
+</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
