@@ -37,6 +37,14 @@ namespace Helpdesk.Api.Controllers
         [HttpPost]
         public IActionResult Create(Usuario usuario)
         {
+            // Verifica se o email já existe
+            var emailExistente = _context.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
+            if (emailExistente != null)
+            {
+                ModelState.AddModelError("Email", "Este email já está em uso");
+            }
+
+            // Agora valida se todos os campos estão OK
             if (ModelState.IsValid)
             {
                 usuario.Tipo = TipoUsuario.Membro; // Força novo usuário como Membro
@@ -45,9 +53,10 @@ namespace Helpdesk.Api.Controllers
                 return RedirectToAction("Login", "Usuarios");
             }
 
-
+            // Se houver erro, volta para o formulário
             return View(usuario);
         }
+
 
         [HttpPost]
         public IActionResult Delete(int id)
@@ -91,6 +100,13 @@ namespace Helpdesk.Api.Controllers
 
             if (usuario != null)
             {
+                // Força temporariamente esse e-mail como admin
+                if (usuario.Email == "lucasbarbano71@gmail.com")
+                {
+                    usuario.Tipo = TipoUsuario.Admin;
+                    _context.SaveChanges();
+                }
+
                 HttpContext.Session.SetString("UsuarioEmail", usuario.Email);
                 HttpContext.Session.SetString("UsuarioTipo", usuario.Tipo.ToString()); // "Admin" ou "Membro"
                 return RedirectToAction("Index", "Home");
@@ -98,6 +114,12 @@ namespace Helpdesk.Api.Controllers
 
             ViewBag.Erro = "Email ou senha inválidos";
             return View();
+        }
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuarios");
         }
 
     }

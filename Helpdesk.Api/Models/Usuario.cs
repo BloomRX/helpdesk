@@ -1,22 +1,28 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Helpdesk.Api.Models
 {
+    public enum TipoUsuario
+    {
+        Membro,
+        Admin
+    }
+
     public class Usuario
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O nome é obrigatório")]
         public string Nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A senha é obrigatória")]
+        [MinLength(6, ErrorMessage = "A senha deve ter no mínimo 6 caracteres")]
         public string Senha { get; set; }
 
-        [Required]
-        public TipoUsuario Tipo { get; set; } // Agora é um enum
+        public TipoUsuario Tipo { get; set; }
     }
 }
