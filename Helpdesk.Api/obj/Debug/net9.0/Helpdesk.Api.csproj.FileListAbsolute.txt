@@ -94,3 +94,4 @@ E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\refint\Helpdesk.Api.dll
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\Helpdesk.Api.pdb
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\ref\Helpdesk.Api.dll
+E:\projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\Helpdesk.Api.sourcelink.json
