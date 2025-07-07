@@ -1,0 +1,17 @@
+@model Helpdesk.Api.Models.Usuario
+
+<h2>Cadastrar Usuário</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Nome:</label>
+        <input asp-for="Nome" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" type="email" />
+    </div>
+    <div>
+        <button type="submit">Cadastrar</button>
+    </div>
+</form>

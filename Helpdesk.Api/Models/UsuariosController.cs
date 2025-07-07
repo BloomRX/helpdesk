@@ -1,30 +1,34 @@
 using Microsoft.AspNetCore.Mvc;
 using Helpdesk.Api.Models;
+using Helpdesk.Api.Data;
 
 namespace Helpdesk.Api.Controllers
 {
     public class UsuariosController : Controller
     {
-        // Simulando um banco de dados na memória
-        private static List<Usuario> usuarios = new List<Usuario>();
+        private readonly AppDbContext _context;
 
-        // GET: /Usuarios
+        public UsuariosController(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
+            var usuarios = _context.Usuarios.ToList();
             return View(usuarios);
         }
 
-        // GET: /Usuarios/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: /Usuarios/Create
         [HttpPost]
         public IActionResult Create(Usuario usuario)
         {
-            usuarios.Add(usuario);
+            _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
     }
