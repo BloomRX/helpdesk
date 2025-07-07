@@ -2,27 +2,53 @@
 
 <h2>Lista de Usuários</h2>
 
-<table border="1">
-    <tr>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Ações</th>
-    </tr>
-
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
     @foreach (var usuario in Model)
     {
         <tr>
             <td>@usuario.Nome</td>
             <td>@usuario.Email</td>
+            <td>@usuario.Tipo</td>
             <td>
-                <form asp-action="Delete" method="post">
+                <!-- Botão Excluir -->
+                <form asp-action="Delete" method="post" style="display:inline;">
                     <input type="hidden" name="id" value="@usuario.Id" />
                     <button type="submit" onclick="return confirm('Deseja excluir este usuário?')">Excluir</button>
                 </form>
+
+                <!-- Botão Tornar Admin -->
+                @if (usuario.Tipo != Helpdesk.Api.Models.TipoUsuario.Admin)
+                {
+                    <form asp-action="TornarAdmin" method="post" style="display:inline; margin-left:10px;">
+                        <input type="hidden" name="id" value="@usuario.Id" />
+                        <button type="submit" onclick="return confirm('Deseja tornar este usuário um administrador?')">Tornar Admin</button>
+                    </form>
+                }
             </td>
         </tr>
     }
+    </tbody>
 </table>
 
-
+<br />
 <a href="/Usuarios/Create">Cadastrar novo usuário</a>
+
+public IActionResult Index()
+{
+    if (HttpContext.Session.GetString("UsuarioTipo") != TipoUsuario.Admin.ToString())
+    {
+        return Unauthorized(); // ou RedirectToAction("Login")
+    }
+
+    var usuarios = _context.Usuarios.ToList();
+    return View(usuarios);
+}
