@@ -1,0 +1,23 @@
+@model List<Helpdesk.Api.Models.Usuario>
+
+<h2>Usuários Cadastrados</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.Nome</td>
+                <td>@usuario.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Usuarios/Create">Cadastrar novo usuário</a>
