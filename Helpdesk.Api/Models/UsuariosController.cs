@@ -45,6 +45,7 @@ namespace Helpdesk.Api.Controllers
                 return RedirectToAction("Login", "Usuarios");
             }
 
+
             return View(usuario);
         }
 
@@ -76,5 +77,28 @@ namespace Helpdesk.Api.Controllers
 
             return RedirectToAction("Index");
         }
+        
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string email, string senha)
+        {
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+
+            if (usuario != null)
+            {
+                HttpContext.Session.SetString("UsuarioEmail", usuario.Email);
+                HttpContext.Session.SetString("UsuarioTipo", usuario.Tipo.ToString()); // "Admin" ou "Membro"
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.Erro = "Email ou senha inválidos";
+            return View();
+        }
+
     }
 }

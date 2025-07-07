@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {}
+    "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
-    "E:\\projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {
+    "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
+        "projectUniqueName": "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "projectName": "Helpdesk.Api",
-        "projectPath": "E:\\projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
+        "projectPath": "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\helpdesk\\Helpdesk.Api\\obj\\",
+        "outputPath": "E:\\Projects\\helpdesk\\helpdesk.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
