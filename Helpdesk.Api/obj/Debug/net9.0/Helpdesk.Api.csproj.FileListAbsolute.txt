@@ -1050,7 +1050,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\rjsmcsh
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\scopedcss\bundle\Helpdesk.Api.styles.css
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\scopedcss\projectbundle\Helpdesk.Api.bundle.scp.css
-C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-b9sayid5wm.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\04xspcb0av-61n19gt1b8.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\ku1wusjqid-xtxxf3hu2r.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\6j3svim5kq-t1cqhe9u97.gz
@@ -1112,8 +1111,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compres
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\oxui705ihl-9vr69e8ynj.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\bpnvsu8wxd-87fc7y1x7t.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\rot2rdxfl2-mlv21k5csn.gz
-C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\5rvra7z0gb-e463uuk3dx.gz
-C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\l0rj9g6ecc-e463uuk3dx.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\staticwebassets.development.json
@@ -1124,3 +1121,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\refint\
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\Helpdesk.Api.pdb
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\ref\Helpdesk.Api.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-3fucqofav8.gz
+C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\5rvra7z0gb-cdoj0p64bx.gz
+C:\Users\Formação\Desktop\Lucas\helpdesk\helpdesk.api\obj\Debug\net9.0\compressed\l0rj9g6ecc-cdoj0p64bx.gz
