@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "projectName": "Helpdesk.Api",
-        "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\obj\\",
+        "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
