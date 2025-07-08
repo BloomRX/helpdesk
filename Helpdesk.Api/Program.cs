@@ -3,25 +3,41 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona serviços ao container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddSession();
+// Configurações
+var configuration = builder.Configuration;
 
-// Configura o DbContext com SQLite.
+// Serviços
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+// Banco de Dados (SQLite para desenvolvimento)
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=helpdesk.db"));
+{
+    options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+    
+    // Para usar SQL Server em produção:
+    // options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
+});
 
 var app = builder.Build();
 
-// Garante a criação do banco e tabelas em tempo de execução (apenas para dev).
-using (var scope = app.Services.CreateScope())
+// Migrações automáticas (apenas em desenvolvimento)
+if (app.Environment.IsDevelopment())
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.EnsureCreated();
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
 }
 
-// Configura o pipeline HTTP.
+// Pipeline HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -30,7 +46,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 app.UseSession();
 app.UseAuthorization();

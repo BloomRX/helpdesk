@@ -8,6 +8,7 @@ namespace Helpdesk.Api.Controllers
 {
     public class UsuariosController : Controller
     {
+
         private readonly AppDbContext _context;
 
         public UsuariosController(AppDbContext context)
@@ -105,7 +106,13 @@ namespace Helpdesk.Api.Controllers
         [HttpPost]
         public IActionResult Login(string email, string senha)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+
+            if (usuario == null || !BCrypt.Net.BCrypt.Verify(senha, usuario.Senha))
+            {
+                ViewBag.Erro = "Email ou senha inválidos";
+                return View();
+            }
 
             if (usuario != null)
             {
@@ -120,8 +127,6 @@ namespace Helpdesk.Api.Controllers
                 HttpContext.Session.SetString("UsuarioTipo", usuario.Tipo.ToString()); // "Admin" ou "Membro"
                 return RedirectToAction("Index", "Home");
             }
-
-            ViewBag.Erro = "Email ou senha inválidos";
             return View();
         }
         [HttpPost]
