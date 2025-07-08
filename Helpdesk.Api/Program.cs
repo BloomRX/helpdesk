@@ -1,7 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=helpdesk.db"));
 
-// Serviços necessários
+// Autenticação por cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Usuarios/Login";
+        options.LogoutPath = "/Usuarios/Logout";
+    });
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
@@ -23,10 +30,13 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-// Pipeline HTTP
 app.UseStaticFiles();
 app.UseRouting();
+
 app.UseSession();
+
+// IMPORTANTE
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

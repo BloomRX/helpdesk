@@ -7,6 +7,7 @@ using BCrypt.Net;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Helpdesk.Api.Controllers
 {
@@ -27,7 +28,8 @@ namespace Helpdesk.Api.Controllers
 
         // LOGIN - POST
         [HttpPost]
-        public IActionResult Login(string email, string senha)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(string email, string senha)
         {
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
 
@@ -37,9 +39,23 @@ namespace Helpdesk.Api.Controllers
                 return View();
             }
 
-            HttpContext.Session.SetString("UsuarioEmail", usuario.Email);
-            return RedirectToAction("Index");
+            // Claims
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, usuario.Email),
+                new Claim(ClaimTypes.Role, usuario.Tipo)
+            };
+
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+
+            // Login com cookies
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            return RedirectToAction("Index", "Solicitacoes");
         }
+
+
 
         // CADASTRO - GET
         public IActionResult Create()
@@ -81,9 +97,11 @@ namespace Helpdesk.Api.Controllers
             return View(usuarios);
         }
 
-        public IActionResult Logout()
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Logout()
         {
-            HttpContext.Session.Clear();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
     }
