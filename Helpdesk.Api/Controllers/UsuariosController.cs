@@ -56,7 +56,8 @@ namespace Helpdesk.Api.Controllers
             if (ModelState.IsValid)
             {
                 usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
-                usuario.Tipo = "Membro";
+                // Se o email for o do admin, define como Admin
+                usuario.Tipo = usuario.Email.ToLower() == "admin@admin.com" ? "Admin" : "Membro";
 
                 _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
@@ -67,21 +68,46 @@ namespace Helpdesk.Api.Controllers
             return View(usuario);
         }
 
-        // LISTAGEM (apenas se logado)
+        // LISTAGEM (apenas se for admin)
         public IActionResult Index()
         {
             var email = HttpContext.Session.GetString("UsuarioEmail");
             if (string.IsNullOrEmpty(email))
                 return RedirectToAction("Login");
 
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+            if (usuario == null || usuario.Tipo != "Admin")
+                //return Unauthorized();
+                return RedirectToAction("Login");
+
             var usuarios = _context.Usuarios.ToList();
             return View(usuarios);
         }
+
 
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public IActionResult TornarAdmin(int id)
+        {
+            var emailLogado = HttpContext.Session.GetString("UsuarioEmail");
+            var logado = _context.Usuarios.FirstOrDefault(u => u.Email == emailLogado);
+
+            if (logado == null || logado.Tipo != "Admin")
+                return Unauthorized();
+
+            var usuario = _context.Usuarios.Find(id);
+            if (usuario != null)
+            {
+                usuario.Tipo = "Admin";
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

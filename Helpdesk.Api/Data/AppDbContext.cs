@@ -12,6 +12,10 @@ namespace Helpdesk.Api.Data
 
         public DbSet<Usuario> Usuarios { get; set; }  // Tabela de usuários
         public DbSet<Solicitacao> Solicitacoes { get; set; } // Perguntas Solicitadas
+        public DbSet<Resposta> Respostas { get; set; }
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>()
