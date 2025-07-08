@@ -1,0 +1,11 @@
+@model IEnumerable<Helpdesk.Api.Models.Solicitacao>
+
+<h2>Solicitações</h2>
+<ul>
+@foreach (var s in Model)
+{
+    <li>
+        <a asp-action="Detalhes" asp-route-id="@s.Id">@s.Titulo</a> - por @s.EmailUsuario
+    </li>
+}
+</ul>

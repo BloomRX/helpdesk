@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
+    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
+    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
         "projectName": "Helpdesk.Api",
-        "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\obj\\",
+        "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

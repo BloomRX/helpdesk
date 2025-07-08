@@ -1,5 +1,7 @@
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
