@@ -5210,24 +5210,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucas\\.nuget\\packages\\": {}
+    "C:\\Users\\Formação\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
       "projectName": "Helpdesk.Api",
-      "projectPath": "E:\\Projects\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
-      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\helpdesk\\helpdesk.api\\obj\\",
+      "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+      "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
