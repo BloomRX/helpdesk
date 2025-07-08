@@ -558,6 +558,6 @@ C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\Helpdesk.Api.pdb
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\ref\Helpdesk.Api.dll
-C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\c00bojtfrn-3fucqofav8.gz
-C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\5rvra7z0gb-cdoj0p64bx.gz
-C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\l0rj9g6ecc-cdoj0p64bx.gz
+C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\5rvra7z0gb-3epogw9qh0.gz
+C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\l0rj9g6ecc-3epogw9qh0.gz
+C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\c00bojtfrn-i913chvi25.gz

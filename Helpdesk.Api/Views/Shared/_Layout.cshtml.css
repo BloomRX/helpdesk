@@ -1,10 +1,12 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-html{
-  background-color: #0655ca
+
+body{
+  background-color: #0655ca;
 }
 a.navbar-brand {
+  background-color: #0655ca;
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -15,22 +17,22 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #0655ca;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #0655ca;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #0655ca;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #0655ca;
 }
 
 .box-shadow {
