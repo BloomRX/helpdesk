@@ -1,29 +1,50 @@
-@model Helpdesk.Api.Models.Solicitacao
+@model Solicitacao
+
+@{
+    ViewData["Title"] = "Detalhes da Solicitação";
+}
 
 <h2>@Model.Titulo</h2>
-<p>@Model.Descricao</p>
-<p><i>Por @Model.EmailUsuario em @Model.DataAbertura.ToShortDateString()</i></p>
+<p><strong>Descrição:</strong> @Model.Descricao</p>
+<p><strong>Autor:</strong> @Model.EmailUsuario</p>
+<p><strong>Data de criação:</strong> @Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")</p>
 
-@if (Model.EmailUsuario == Context.Session.GetString("UsuarioEmail") ||
-     Context.Session.GetString("UsuarioTipo") == "Admin")
+<hr />
+<h4>Respostas:</h4>
+
+@if (Model.Respostas.Any())
 {
-    <a asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
-    <form asp-action="Excluir" asp-route-id="@Model.Id" method="post">
-        <button type="submit" onclick="return confirm('Excluir esta solicitação?')">Excluir</button>
-    </form>
+    <ul>
+        @foreach (var resposta in Model.Respostas)
+        {
+            <li>
+                <strong>@resposta.EmailUsuario:</strong> @resposta.Conteudo
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Sem respostas ainda.</p>
 }
 
 <hr />
-<h3>Respostas:</h3>
-@foreach (var r in Model.Respostas)
-{
-    <p><b>@r.EmailUsuario</b>: @r.Conteudo</p>
-}
+<h4>Responder</h4>
 
-<hr />
-<h4>Responder:</h4>
 <form asp-action="Responder" method="post">
     <input type="hidden" name="solicitacaoId" value="@Model.Id" />
-    <textarea name="conteudo" required></textarea><br />
-    <button type="submit">Enviar</button>
+    <textarea name="conteudo" class="form-control" rows="3" required></textarea>
+    <br />
+    <button type="submit" class="btn btn-primary">Responder</button>
 </form>
+
+<hr />
+
+@* Botões visíveis apenas para o autor ou admin *@
+@if (User.Identity.IsAuthenticated && 
+    (User.Identity.Name == Model.EmailUsuario || User.IsInRole("Admin")))
+{
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"
+    onclick="return confirm('Tem certeza que deseja excluir esta solicitação?');">Excluir</a>
+}

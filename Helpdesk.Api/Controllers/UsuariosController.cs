@@ -4,6 +4,9 @@ using Helpdesk.Api.Data;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
 using BCrypt.Net;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Helpdesk.Api.Controllers
 {

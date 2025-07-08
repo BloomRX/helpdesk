@@ -20,7 +20,8 @@ namespace Helpdesk.Api.Models
         [NotMapped]
         [Compare("Senha", ErrorMessage = "As senhas não coincidem")]
         public string ConfirmarSenha { get; set; } = string.Empty;
-
+        public string Role { get; set; } = "Usuario";
+        
         public string Tipo { get; set; } = "Membro";
     }
 }
