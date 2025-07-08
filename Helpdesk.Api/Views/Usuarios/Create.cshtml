@@ -1,11 +1,13 @@
 @model Helpdesk.Api.Models.Usuario
-<style = Css>
+<style>
 div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 </style>
+
 <form asp-action="Create" method="post">
     <div>
         <label>Nome</label><br>
@@ -30,7 +32,7 @@ div {
         <input asp-for="Senha" type="password" />
         <span asp-validation-for="Senha" style="color:red"></span>
     </div>
-
+<br>
     <div>
         <label>Confirmar Senha</label><br>
     </div>
