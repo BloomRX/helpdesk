@@ -1,5 +1,6 @@
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using BCrypt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     // Para usar SQL Server em produção:
     // options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
 });
+builder.Services.Configure<BcryptSettings>(builder.Configuration.GetSection("Bcrypt"));
 
 var app = builder.Build();
 
