@@ -1,8 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
 @{
-    var usuarioEmail = HttpContextAccessor.HttpContext.Session.GetString("UsuarioEmail");
-    var usuarioTipo = HttpContextAccessor.HttpContext.Session.GetString("UsuarioTipo");
+    var usuarioEmail = HttpContextAccessor.HttpContext?.Session.GetString("UsuarioEmail");
+    var usuarioTipo = HttpContextAccessor.HttpContext?.Session.GetString("UsuarioTipo");
     var isAdmin = usuarioTipo == "Admin";
 }
 
@@ -11,43 +11,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Help-me</title>
+    <title>@(ViewData["Title"]?.ToString() ?? "Helpdesk")</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Helpdesk.Api.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Helpdesk.Api</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
 
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Helpdesk</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                         @if (isAdmin)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">Administração</a>
+                                <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">Usuários</a>
                             </li>
                         }
                     </ul>
-
                     <ul class="navbar-nav">
-                        @if (string.IsNullOrEmpty(usuarioEmail))
+                        @if (usuarioEmail == null)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Create">Cadastrar</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Login">Login</a>
                             </li>
@@ -55,11 +41,11 @@
                         else
                         {
                             <li class="nav-item">
-                                <span class="nav-link text-dark">Olá, @usuarioEmail</span>
+                                <span class="nav-link text-dark">@usuarioEmail</span>
                             </li>
                             <li class="nav-item">
-                                <form asp-controller="Usuarios" asp-action="Logout" method="post" class="form-inline">
-                                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                                <form asp-controller="Usuarios" asp-action="Logout" method="post">
+                                    <button type="submit" class="btn btn-link nav-link">Sair</button>
                                 </form>
                             </li>
                         }
@@ -68,22 +54,13 @@
             </div>
         </nav>
     </header>
-
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Helpdesk.Api - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

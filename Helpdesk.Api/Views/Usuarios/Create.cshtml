@@ -1,49 +1,28 @@
 @model Helpdesk.Api.Models.Usuario
-<style>
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@{
+    ViewData["Title"] = "Cadastro";
 }
 
-</style>
+<h2>Cadastrar Usuário</h2>
 
 <form asp-action="Create" method="post">
-    <div>
-        <label>Nome</label><br>
-    </div>
-    <div>
-        <input asp-for="Nome" />
-        <span asp-validation-for="Nome" style="color:red"></span>
-    </div>
-<br>
-    <div>
-        <label>Email</label><br>
-    </div>
-    <div>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email" style="color:red"></span>
-    </div>
-<br>
-    <div>
-        <label>Senha</label><br>
-    </div>
-    <div>
-        <input asp-for="Senha" type="password" />
-        <span asp-validation-for="Senha" style="color:red"></span>
-    </div>
-<br>
-    <div>
-        <label>Confirmar Senha</label><br>
-    </div>
-    <div>
-        <input asp-for="Senha" type="password" />
-        <span asp-validation-for="Senha" style="color:red"></span>
-    </div>
-<br>
-<div>
+    <label>Nome:</label><br />
+    <input asp-for="Nome" /><br />
+    <span asp-validation-for="Nome" style="color:red"></span><br />
+
+    <label>Email:</label><br />
+    <input asp-for="Email" /><br />
+    <span asp-validation-for="Email" style="color:red"></span><br />
+
+    <label>Senha:</label><br />
+    <input asp-for="Senha" type="password" /><br />
+    <span asp-validation-for="Senha" style="color:red"></span><br />
+
+    <label>Confirmar Senha:</label><br />
+    <input asp-for="ConfirmarSenha" type="password" /><br />
+    <span asp-validation-for="ConfirmarSenha" style="color:red"></span><br /><br />
+
     <button type="submit">Cadastrar</button>
-</div>
 </form>
 
 @section Scripts {

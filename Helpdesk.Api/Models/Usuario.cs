@@ -7,22 +7,20 @@ namespace Helpdesk.Api.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O nome é obrigatório")]
-        public string Nome { get; set; } = string.Empty; // Inicialização
+        [Required]
+        public string Nome { get; set; }
 
-        [Required(ErrorMessage = "O email é obrigatório")]
-        [EmailAddress(ErrorMessage = "Email inválido")]
-        public string Email { get; set; } = string.Empty; // Inicialização
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
 
-        [Required(ErrorMessage = "A senha é obrigatória")]
-        [MinLength(6, ErrorMessage = "A senha deve ter no mínimo 6 caracteres")]
-        public string Senha { get; set; } = string.Empty; // Inicialização
+        [Required]
+        public string Senha { get; set; }
 
         [NotMapped]
-        [Required(ErrorMessage = "Confirme a senha")]
         [Compare("Senha", ErrorMessage = "As senhas não coincidem")]
-        public string ConfirmarSenha { get; set; } = string.Empty; // Inicialização
+        public string ConfirmarSenha { get; set; }
 
-        public TipoUsuario Tipo { get; set; }
+        public string Tipo { get; set; } = "Membro";
     }
 }
