@@ -15,7 +15,6 @@ namespace Helpdesk.Api.Data
         public DbSet<Resposta> Respostas { get; set; }
 
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>()

@@ -30,10 +30,10 @@ a {
 }
 
 .border-top {
-  border-top: 1px solid #0655ca;
+  border-top: 1px solid #000000;
 }
 .border-bottom {
-  border-bottom: 1px solid #0655ca;
+  border-bottom: 1px solid #000000;
 }
 
 .box-shadow {
@@ -51,4 +51,10 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+image{
+  height: 50px;
+  width: 50px;
+  border: transparent;
 }

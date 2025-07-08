@@ -141,5 +141,70 @@ namespace Helpdesk.Api.Controllers
         {
             return User.IsInRole("Admin") || solicitacao.EmailUsuario == User.Identity?.Name;
         }
+
+
+        [HttpGet]
+public IActionResult Delete(int id)
+{
+    var solicitacao = _context.Solicitacoes.Find(id);
+    if (solicitacao == null) return NotFound();
+
+    var email = User.Identity?.Name;
+    var isAdmin = User.IsInRole("Admin");
+    if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
+
+    return View(solicitacao);
+    }
+
+    [HttpGet]
+public IActionResult Edit(int id)
+{
+    var solicitacao = _context.Solicitacoes.Find(id);
+    if (solicitacao == null) return NotFound();
+
+    // Só autor ou admin pode editar
+    var email = User.Identity?.Name;
+    var isAdmin = User.IsInRole("Admin");
+    if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
+
+    return View(solicitacao);
+    }   
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Edit(Solicitacao solicitacao)
+    {
+        var original = _context.Solicitacoes.Find(solicitacao.Id);
+        if (original == null) return NotFound();
+
+        var email = User.Identity?.Name;
+        var isAdmin = User.IsInRole("Admin");
+        if (original.EmailUsuario != email && !isAdmin) return Forbid();
+
+        original.Titulo = solicitacao.Titulo;
+        original.Descricao = solicitacao.Descricao;
+
+        _context.SaveChanges();
+        return RedirectToAction("Detalhes", new { id = solicitacao.Id });
+    }
+
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        var solicitacao = _context.Solicitacoes.Find(id);
+        if (solicitacao == null) return NotFound();
+
+        var email = User.Identity?.Name;
+        var isAdmin = User.IsInRole("Admin");
+        if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
+
+        _context.Solicitacoes.Remove(solicitacao);
+        _context.SaveChanges();
+
+        return RedirectToAction("Index", "Home");
+    }
+
     }
 }

@@ -31,10 +31,10 @@ a[b-thq38d4qmc] {
 }
 
 .border-top[b-thq38d4qmc] {
-  border-top: 1px solid #0655ca;
+  border-top: 1px solid #000000;
 }
 .border-bottom[b-thq38d4qmc] {
-  border-bottom: 1px solid #0655ca;
+  border-bottom: 1px solid #000000;
 }
 
 .box-shadow[b-thq38d4qmc] {
@@ -52,4 +52,10 @@ button.accept-policy[b-thq38d4qmc] {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+image[b-thq38d4qmc]{
+  height: 50px;
+  width: 50px;
+  border: transparent;
 }

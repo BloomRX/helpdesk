@@ -1,57 +1,21 @@
 @model IEnumerable<Helpdesk.Api.Models.Usuario>
 
-@{
-    ViewData["Title"] = "Lista de Usuários";
+<h2>Usuários Cadastrados</h2>
 
-    // Recupera o e-mail do usuário logado da sessão
-    var emailLogado = Context.Session.GetString("UsuarioEmail");
-
-    // Verifica se o usuário logado é Admin
-    var isAdmin = Model.FirstOrDefault(u => u.Email == emailLogado)?.Tipo == "Admin";
-}
-
-<h2>Lista de Usuários</h2>
-
-<table border="1" cellpadding="5" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Tipo</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var usuario in Model)
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Tipo</th>
+    </tr>
+    @foreach (var u in Model)
     {
         <tr>
-            <td>@usuario.Nome</td>
-            <td>@usuario.Email</td>
-            <td>@usuario.Tipo</td>
-            <td>
-                @* Só mostra os botões se o usuário logado for Admin *@
-                @if (isAdmin)
-                {
-                    <!-- Botão Excluir -->
-                    <form asp-action="Delete" method="post" style="display:inline;">
-                        <input type="hidden" name="id" value="@usuario.Id" />
-                        <button type="submit" onclick="return confirm('Deseja excluir este usuário?')">Excluir</button>
-                    </form>
-
-                    <!-- Botão Tornar Admin -->
-                    @if (usuario.Tipo != "Admin")
-                    {
-                        <form asp-action="TornarAdmin" method="post" style="display:inline; margin-left:10px;">
-                            <input type="hidden" name="id" value="@usuario.Id" />
-                            <button type="submit" onclick="return confirm('Deseja tornar este usuário um administrador?')">Tornar Admin</button>
-                        </form>
-                    }
-                }
-            </td>
+            <td>@u.Nome</td>
+            <td>@u.Email</td>
+            <td>@u.Tipo</td>
         </tr>
     }
-    </tbody>
 </table>
 
-<br />
-<a href="/Usuarios/Create">Cadastrar novo usuário</a>
+<p><a href="/Usuarios/Logout">Sair</a></p>
