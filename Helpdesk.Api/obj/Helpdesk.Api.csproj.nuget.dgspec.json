@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "projectName": "Helpdesk.Api",
-        "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\helpdesk.api\\obj\\",
+        "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -41,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -111,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

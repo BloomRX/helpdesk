@@ -12,13 +12,13 @@
 }
 else
 {
-    <ul class="list-group">
+    <ul class="list-group" style="max-width: 20cm;">
         @foreach (var s in Model)
         {
             <li class="list-group-item">
                 <strong>@s.Titulo</strong><br />
                 @s.Descricao<br />
-                <small class="text-muted">Enviado em @s.DataAbertura:dd/MM/yyyy HH:mm</small>
+                <small class="text-muted">Enviado em @s.DataAbertura</small>
             </li>
         }
     </ul>

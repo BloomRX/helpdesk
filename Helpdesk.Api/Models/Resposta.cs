@@ -1,3 +1,5 @@
+using Helpdesk.Api.Models;
+
 public class Resposta
 {
     public int Id { get; set; }
