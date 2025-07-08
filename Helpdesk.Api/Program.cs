@@ -1,24 +1,27 @@
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
 
-/////////////////////////////////////
 var builder = WebApplication.CreateBuilder(args);
 
+// Adiciona serviços ao container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=helpdesk.db"));  // Banco SQLite
-
-builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
-builder.Services.AddControllersWithViews(); // necessário para controllers e views
+
+// Configura o DbContext com SQLite.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=helpdesk.db"));
 
 var app = builder.Build();
-///////////////////////////////////////
 
+// Garante a criação do banco e tabelas em tempo de execução (apenas para dev).
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
 
-// Configuração do pipeline HTTP
+// Configura o pipeline HTTP.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -26,15 +29,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
 app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
