@@ -1,8 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Helpdesk.Api.Models.Solicitacao>
+
+@{
+    ViewData["Title"] = "Página Inicial";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>Últimas Solicitações</h2>
+
+@if (!Model.Any())
+{
+    <p>Nenhuma solicitação registrada ainda.</p>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var s in Model)
+        {
+            <li class="list-group-item">
+                <strong>@s.Titulo</strong><br />
+                @s.Descricao<br />
+                <small class="text-muted">Enviado em @s.DataAbertura:dd/MM/yyyy HH:mm</small>
+            </li>
+        }
+    </ul>
+}
+
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="Solicitacoes" asp-action="Create">
+        Nova Solicitação
+    </a>
+    <a class="btn btn-link" asp-controller="Solicitacoes" asp-action="Index">
+        Ver todas
+    </a>
 </div>
