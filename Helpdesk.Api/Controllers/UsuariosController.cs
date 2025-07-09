@@ -39,12 +39,17 @@ namespace Helpdesk.Api.Controllers
                 return View();
             }
 
+            // Garante que admin@admin.com seja sempre admin
+            var tipo = usuario.Email.ToLower() == "admin@admin.com" ? "Admin" : usuario.Tipo;
+
             // Claims
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, usuario.Email),
-                new Claim(ClaimTypes.Role, usuario.Tipo)
+                new Claim(ClaimTypes.Name, usuario.Nome), 
+                new Claim(ClaimTypes.Email, usuario.Email),
+                new Claim(ClaimTypes.Role, tipo)
             };
+
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
