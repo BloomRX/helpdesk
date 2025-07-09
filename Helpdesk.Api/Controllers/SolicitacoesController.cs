@@ -1,210 +1,161 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Helpdesk.Api.Models;
 using Helpdesk.Api.Data;
+using Helpdesk.Api.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Helpdesk.Api.Controllers
 {
-    [Authorize] // Requer login para acessar qualquer ação
+    [Authorize]
     public class SolicitacoesController : Controller
     {
         private readonly AppDbContext _context;
+        public SolicitacoesController(AppDbContext ctx) => _context = ctx;
 
-        public SolicitacoesController(AppDbContext context)
-        {
-            _context = context;
-        }
-
-        // Listar todas as solicitações
+        // GET: /Solicitacoes
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Index(int? categoriaId, StatusSolicitacao? status, string colaborador)
         {
-            var solicitacoes = _context.Solicitacoes
+            var q = _context.Solicitacoes
+                .Include(s => s.Categoria)
                 .Include(s => s.Respostas)
-                .ToList();
+                .AsQueryable();
 
-            return View(solicitacoes);
+            if (categoriaId.HasValue)
+                q = q.Where(s => s.CategoriaId == categoriaId.Value);
+
+            if (status.HasValue)
+                q = q.Where(s => s.Status == status.Value);
+
+            if (!string.IsNullOrWhiteSpace(colaborador))
+                q = q.Where(s => s.EmailUsuario == colaborador);
+
+            ViewBag.Categorias = _context.Categorias.ToList();
+            ViewBag.StatusList = Enum.GetValues<StatusSolicitacao>();
+            return View(q.OrderByDescending(s => s.DataAbertura).ToList());
         }
 
-        // Visualizar os detalhes (e respostas)
+        // GET: /Solicitacoes/Details/5
         [AllowAnonymous]
-        public IActionResult Detalhes(int id)
+        public IActionResult Details(int id)
         {
-            var solicitacao = _context.Solicitacoes
+            var sol = _context.Solicitacoes
+                .Include(s => s.Categoria)
                 .Include(s => s.Respostas)
                 .FirstOrDefault(s => s.Id == id);
-
-            if (solicitacao == null) return NotFound();
-
-            return View(solicitacao);
+            if (sol == null) return NotFound();
+            return View(sol);
         }
 
-        // Formulário para criar nova solicitação
-        [HttpGet]
+        // GET: /Solicitacoes/Create
         public IActionResult Create()
         {
-            return View();
+            CarregarCategorias();
+            return View(new Solicitacao
+            {
+                DataAbertura = DateTime.Now,
+                EmailUsuario = User.Identity!.Name!
+            });
         }
 
-        // Criar nova solicitação (só logado)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        // POST: /Solicitacoes/Create
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Create(Solicitacao solicitacao)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                solicitacao.EmailUsuario = User.Identity?.Name!;
-                solicitacao.DataAbertura = DateTime.Now;
-
-                _context.Solicitacoes.Add(solicitacao);
-                _context.SaveChanges();
-
-                return RedirectToAction("Index", "Home");
+                CarregarCategorias();
+                return View(solicitacao);
             }
 
-            return View(solicitacao);
-        }
-
-        // Formulário de edição
-        public IActionResult Editar(int id)
-        {
-            var solicitacao = _context.Solicitacoes.Find(id);
-            if (solicitacao == null) return NotFound();
-
-            if (!UsuarioPodeAlterar(solicitacao))
-                return Forbid();
-
-            return View(solicitacao);
-        }
-
-        // Atualiza solicitação
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Editar(Solicitacao solicitacao)
-        {
-            var original = _context.Solicitacoes.AsNoTracking().FirstOrDefault(s => s.Id == solicitacao.Id);
-            if (original == null) return NotFound();
-
-            if (!UsuarioPodeAlterar(original))
-                return Forbid();
-
-            solicitacao.EmailUsuario = original.EmailUsuario; // mantém o autor original
-            solicitacao.DataAbertura = original.DataAbertura;
-
-            _context.Solicitacoes.Update(solicitacao);
+            solicitacao.EmailUsuario = User.Identity!.Name!;
+            solicitacao.DataAbertura = DateTime.Now;
+            _context.Solicitacoes.Add(solicitacao);
             _context.SaveChanges();
-
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-        // Excluir solicitação
-        public IActionResult Excluir(int id)
+        // GET: /Solicitacoes/Edit/5
+        public IActionResult Edit(int id)
         {
-            var solicitacao = _context.Solicitacoes.Find(id);
-            if (solicitacao == null) return NotFound();
+            var sol = _context.Solicitacoes.Find(id);
+            if (sol == null) return NotFound();
+            if (!UsuarioPodeAlterar(sol)) return Forbid();
 
-            if (!UsuarioPodeAlterar(solicitacao))
-                return Forbid();
-
-            _context.Solicitacoes.Remove(solicitacao);
-            _context.SaveChanges();
-
-            return RedirectToAction("Index");
+            CarregarCategorias(sol.CategoriaId);
+            return View(sol);
         }
 
-        // Responder a uma solicitação (apenas logado)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        // POST: /Solicitacoes/Edit/5
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Solicitacao form)
+        {
+            if (id != form.Id) return BadRequest();
+            var orig = _context.Solicitacoes.AsNoTracking().FirstOrDefault(s => s.Id == id);
+            if (orig == null) return NotFound();
+            if (!UsuarioPodeAlterar(orig)) return Forbid();
+
+            orig.Titulo      = form.Titulo;
+            orig.Descricao   = form.Descricao;
+            orig.CategoriaId = form.CategoriaId;
+            orig.Status      = form.Status;
+
+            _context.Solicitacoes.Update(orig);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        // GET: /Solicitacoes/Delete/5
+        public IActionResult Delete(int id)
+        {
+            var sol = _context.Solicitacoes.Find(id);
+            if (sol == null) return NotFound();
+            if (!UsuarioPodeAlterar(sol)) return Forbid();
+            return View(sol);
+        }
+
+        // POST: /Solicitacoes/Delete/5
+        [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var sol = _context.Solicitacoes.Find(id);
+            if (sol == null) return NotFound();
+            if (!UsuarioPodeAlterar(sol)) return Forbid();
+
+            _context.Solicitacoes.Remove(sol);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: /Solicitacoes/Responder
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Responder(int solicitacaoId, string conteudo)
         {
-            var email = User.Identity?.Name;
-
-            if (string.IsNullOrEmpty(email))
-                return RedirectToAction("Login", "Usuarios");
+            if (!User.Identity!.IsAuthenticated)
+                return Challenge();
 
             var resposta = new Resposta
             {
+                SolicitacaoId = solicitacaoId,
                 Conteudo = conteudo,
-                EmailUsuario = email,
-                SolicitacaoId = solicitacaoId
+                EmailUsuario = User.Identity.Name!
             };
-
             _context.Respostas.Add(resposta);
             _context.SaveChanges();
-
-            return RedirectToAction("Detalhes", new { id = solicitacaoId });
+            return RedirectToAction(nameof(Details), new { id = solicitacaoId });
         }
 
-        // Verifica se o usuário atual é o autor da solicitação ou admin
-        private bool UsuarioPodeAlterar(Solicitacao solicitacao)
+        // Carrega a lista de categorias para os dropdowns
+        private void CarregarCategorias(int? categoriaSelecionada = null)
         {
-            return User.IsInRole("Admin") || solicitacao.EmailUsuario == User.Identity?.Name;
+            var categorias = _context.Categorias.ToList();
+            ViewBag.Categorias = new SelectList(categorias, "Id", "Nome", categoriaSelecionada);
         }
 
-
-        [HttpGet]
-public IActionResult Delete(int id)
-{
-    var solicitacao = _context.Solicitacoes.Find(id);
-    if (solicitacao == null) return NotFound();
-
-    var email = User.Identity?.Name;
-    var isAdmin = User.IsInRole("Admin");
-    if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
-
-    return View(solicitacao);
-    }
-
-    [HttpGet]
-public IActionResult Edit(int id)
-{
-    var solicitacao = _context.Solicitacoes.Find(id);
-    if (solicitacao == null) return NotFound();
-
-    // Só autor ou admin pode editar
-    var email = User.Identity?.Name;
-    var isAdmin = User.IsInRole("Admin");
-    if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
-
-    return View(solicitacao);
-    }   
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Edit(Solicitacao solicitacao)
-    {
-        var original = _context.Solicitacoes.Find(solicitacao.Id);
-        if (original == null) return NotFound();
-
-        var email = User.Identity?.Name;
-        var isAdmin = User.IsInRole("Admin");
-        if (original.EmailUsuario != email && !isAdmin) return Forbid();
-
-        original.Titulo = solicitacao.Titulo;
-        original.Descricao = solicitacao.Descricao;
-
-        _context.SaveChanges();
-        return RedirectToAction("Detalhes", new { id = solicitacao.Id });
-    }
-
-
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public IActionResult DeleteConfirmed(int id)
-    {
-        var solicitacao = _context.Solicitacoes.Find(id);
-        if (solicitacao == null) return NotFound();
-
-        var email = User.Identity?.Name;
-        var isAdmin = User.IsInRole("Admin");
-        if (solicitacao.EmailUsuario != email && !isAdmin) return Forbid();
-
-        _context.Solicitacoes.Remove(solicitacao);
-        _context.SaveChanges();
-
-        return RedirectToAction("Index", "Home");
-    }
-
+        // Verifica se o usuário pode editar/excluir a solicitação
+        private bool UsuarioPodeAlterar(Solicitacao s) =>
+            User.IsInRole("Admin") ||
+            s.EmailUsuario == User.Identity?.Name;
     }
 }

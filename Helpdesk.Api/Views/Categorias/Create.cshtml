@@ -1,0 +1,21 @@
+@model Helpdesk.Api.Models.Categoria
+
+@{
+    ViewData["Title"] = "Nova Categoria";
+}
+
+<h1>Nova Categoria</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Nome" class="form-label">Nome da Categoria</label>
+        <input asp-for="Nome" class="form-control" required />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

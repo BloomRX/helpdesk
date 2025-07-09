@@ -1,0 +1,25 @@
+@model IEnumerable<Helpdesk.Api.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>Categorias</h1>
+
+<a class="btn btn-success mb-3" asp-action="Create">Nova Categoria</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@cat.Nome</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Sqlite;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,19 +22,17 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-// Migrar banco ao iniciar
+// Garante a criação do banco e tabelas em tempo de execução (dev)
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    db.Database.EnsureCreated();
 }
 
 app.UseStaticFiles();
 app.UseRouting();
 
 app.UseSession();
-
-// IMPORTANTE
 app.UseAuthentication();
 app.UseAuthorization();
 

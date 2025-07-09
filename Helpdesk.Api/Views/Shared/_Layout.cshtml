@@ -1,12 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
+
 @{
-    //var usuarioEmail = HttpContextAccessor.HttpContext?.Session.GetString("UsuarioEmail");
-    //var usuarioTipo = HttpContextAccessor.HttpContext?.Session.GetString("UsuarioTipo");
-    //var isAdmin = usuarioTipo == "Admin";
     var usuarioEmail = User.Identity?.Name;
     var isAdmin = User.IsInRole("Admin");
-
 }
 
 <!DOCTYPE html>
@@ -20,18 +17,21 @@
 </head>
 <body>
     <header>
-        
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
-
+        <nav class="navbar navbar-expand-sm navbar-dark bg-black border-bottom box-shadow mb-3">
             <div class="container">
-                <img src="Helpdesk.Api\Views\Shared\Estrela.webp" Class="image">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Helpdesk</a>
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/Estrela.webp" alt="Logo" class="me-2" style="width: 32px; height: 32px;" />
+                    Helpdesk
+                </a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Solicitacoes" asp-action="Index">Solicitações</a>
+                        </li>
                         @if (isAdmin)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">Usuários</a>
+                                <a class="nav-link text-white" asp-controller="Usuarios" asp-action="Index">Usuários</a>
                             </li>
                         }
                     </ul>
@@ -39,17 +39,17 @@
                         @if (usuarioEmail == null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Login">Login</a>
+                                <a class="nav-link text-white" asp-controller="Usuarios" asp-action="Login">Login</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <span class="nav-link text-dark">@usuarioEmail</span>
+                                <span class="nav-link text-white">@usuarioEmail</span>
                             </li>
                             <li class="nav-item">
-                                <form asp-controller="Usuarios" asp-action="Logout" method="post">
-                                    <button type="submit" class="btn btn-link nav-link">Sair</button>
+                                <form asp-controller="Usuarios" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-link nav-link text-white">Sair</button>
                                 </form>
                             </li>
                         }
@@ -58,11 +58,13 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

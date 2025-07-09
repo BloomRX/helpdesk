@@ -13,6 +13,8 @@ namespace Helpdesk.Api.Data
         public DbSet<Usuario> Usuarios { get; set; }  // Tabela de usuários
         public DbSet<Solicitacao> Solicitacoes { get; set; } // Perguntas Solicitadas
         public DbSet<Resposta> Respostas { get; set; }
+        public DbSet<Categoria> Categorias { get; set; } // Categorias de perguntas
+        //public DbSet<StatusSolicitacao> StatusSolicitacoes { get; set; } // Status das solicitações
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

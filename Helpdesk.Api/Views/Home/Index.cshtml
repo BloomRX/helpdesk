@@ -15,10 +15,19 @@ else
     <ul class="list-group">
         @foreach (var s in Model)
         {
-            <li class="list-group-item">
-                <strong>@s.Titulo</strong><br />
-                @s.Descricao<br />
-                <small class="text-muted">Enviado em @s.DataAbertura</small>
+            <li class="list-group-item position-relative">
+                <a asp-controller="Solicitacoes"
+                asp-action="Detalhes"
+                asp-route-id="@s.Id"
+                class="stretched-link text-decoration-none">
+                    <strong>@s.Titulo</strong>
+                </a>
+                <br />
+                <small class="text-muted">
+                    @s.Descricao  
+                    <br />
+                    <em>Por @s.EmailUsuario em @s.DataAbertura.ToString("dd/MM/yyyy HH:mm")</em>
+                </small>
             </li>
         }
     </ul>
