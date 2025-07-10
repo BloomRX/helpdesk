@@ -4,74 +4,76 @@
     ViewData["Title"] = "Detalhes da Solicitação";
 }
 
-<h2>@Model.Titulo</h2>
+<div class="container-glass">
+    <h2>@Model.Titulo</h2>
 
-<p><strong>Descrição:</strong> @Model.Descricao</p>
-<p><strong>Autor:</strong> @Model.EmailUsuario</p>
-<p><strong>Data de criação:</strong> @Model.DataAbertura.ToString("dd/MM/yyyy HH:mm")</p>
-<p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Descrição:</strong> @Model.Descricao</p>
+    <p><strong>Autor:</strong> @Model.EmailUsuario</p>
+    <p><strong>Data de criação:</strong> @Model.DataAbertura.ToString("dd/MM/yyyy HH:mm")</p>
+    <p><strong>Status:</strong> @Model.Status</p>
 
-@if (Model.Resolvida && Model.DataResolucao.HasValue)
-{
-    <p><strong>Resolvida em:</strong> @Model.DataResolucao.Value.ToString("dd/MM/yyyy HH:mm")</p>
-}
-
-<hr />
-<h4>Respostas:</h4>
-
-@if (Model.Respostas.Any())
-{
-    <ul class="list-group">
-        @foreach (var resposta in Model.Respostas.OrderByDescending(r => r.Melhor))
-        {
-            <li class="list-group-item @(resposta.Melhor ? "bg-success text-white" : "")">
-                <strong>@resposta.EmailUsuario:</strong> @resposta.Conteudo
-                @if (resposta.Melhor)
-                {
-                    <span class="badge bg-light text-dark">Melhor resposta</span>
-                }
-
-                @if ((User.Identity?.Name == Model.EmailUsuario || User.IsInRole("Admin")) && !resposta.Melhor)
-                {
-                    <form asp-action="MarcarMelhorResposta" method="post" class="d-inline">
-                        <input type="hidden" name="respostaId" value="@resposta.Id" />
-                        <button type="submit" class="btn btn-sm btn-outline-success">Marcar como melhor</button>
-                    </form>
-                }
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>Sem respostas ainda.</p>
-}
-
-<hr />
-<h4>Responder</h4>
-
-<form asp-action="Responder" method="post">
-    <input type="hidden" name="solicitacaoId" value="@Model.Id" />
-    <textarea name="conteudo" class="form-control" rows="3" required></textarea>
-    <br />
-    <button type="submit" class="btn btn-primary">Responder</button>
-</form>
-
-<hr />
-
-@* Botões de ação para o autor ou admin *@
-@if (User.Identity.IsAuthenticated &&
-    (User.Identity.Name == Model.EmailUsuario || User.IsInRole("Admin")))
-{
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
-    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"
-    onclick="return confirm('Tem certeza que deseja excluir esta solicitação?');">Excluir</a>
-
-    @if (!Model.Resolvida)
+    @if (Model.Resolvida && Model.DataResolucao.HasValue)
     {
-        <form asp-action="MarcarResolvida" method="post" class="d-inline">
-            <input type="hidden" name="id" value="@Model.Id" />
-            <button type="submit" class="btn btn-success">Marcar como Resolvida</button>
-        </form>
+        <p><strong>Resolvida em:</strong> @Model.DataResolucao.Value.ToString("dd/MM/yyyy HH:mm")</p>
     }
-}
+
+    <hr />
+    <h4>Respostas:</h4>
+
+    @if (Model.Respostas.Any())
+    {
+        <ul class="list-group">
+            @foreach (var resposta in Model.Respostas.OrderByDescending(r => r.Melhor))
+            {
+                <li class="list-group-item @(resposta.Melhor ? "bg-success text-white" : "")">
+                    <strong>@resposta.EmailUsuario:</strong> @resposta.Conteudo
+                    @if (resposta.Melhor)
+                    {
+                        <span class="badge bg-light text-dark">Melhor resposta</span>
+                    }
+
+                    @if ((User.Identity?.Name == Model.EmailUsuario || User.IsInRole("Admin")) && !resposta.Melhor)
+                    {
+                        <form asp-action="MarcarMelhorResposta" method="post" class="d-inline">
+                            <input type="hidden" name="respostaId" value="@resposta.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-light">Marcar como melhor</button>
+                        </form>
+                    }
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Sem respostas ainda.</p>
+    }
+
+    <hr />
+    <h4>Responder</h4>
+
+    <form asp-action="Responder" method="post">
+        <input type="hidden" name="solicitacaoId" value="@Model.Id" />
+        <textarea name="conteudo" class="form-control" rows="3" required></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary">Responder</button>
+    </form>
+
+    <hr />
+
+    @* Ações do autor ou admin *@
+    @if (User.Identity.IsAuthenticated &&
+        (User.Identity.Name == Model.EmailUsuario || User.IsInRole("Admin")))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"
+        onclick="return confirm('Tem certeza que deseja excluir esta solicitação?');">Excluir</a>
+
+        @if (!Model.Resolvida)
+        {
+            <form asp-action="MarcarResolvida" method="post" class="d-inline">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-success">Marcar como Resolvida</button>
+            </form>
+        }
+    }
+</div>
