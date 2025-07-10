@@ -1111,4 +1111,4 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microso
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Text.Json.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-ihdynycakv.gz
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-vt26gct16p.gz
