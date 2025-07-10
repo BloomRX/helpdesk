@@ -127,5 +127,15 @@
     "C:\\Users\\Formação\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Formação\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
