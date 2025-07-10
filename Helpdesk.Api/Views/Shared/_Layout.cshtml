@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
+<script>
+    document.addEventListener("mousemove", function(e) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 10;
+        const y = (e.clientY / window.innerHeight - 0.5) * 10;
+        document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+</script>
+
+
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">

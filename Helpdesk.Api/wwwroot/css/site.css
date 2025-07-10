@@ -35,6 +35,7 @@ body {
     background-position: center;
     color: #ffffff; /* fonte clara */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-position 0.2s ease; /* para movimento suave */
 }
 
 .navbar, .dropdown-menu, .card, .modal-content, .table {

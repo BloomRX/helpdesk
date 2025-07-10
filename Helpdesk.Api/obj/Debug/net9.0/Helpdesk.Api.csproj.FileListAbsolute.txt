@@ -1674,4 +1674,4 @@ C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\com
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-3jl9hs312n.gz
 >>>>>>> cb441c467595eb583dddf6d53eca92733eb7b57b
 >>>>>>> db117e177f682c24b01e8fe39be3802a73fd65c3
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-voy1l3fnur.gz
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-s2zsajz1oh.gz
