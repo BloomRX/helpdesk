@@ -495,7 +495,6 @@ C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\scopedcss\bundle\Helpdesk.Api.styles.css
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\scopedcss\projectbundle\Helpdesk.Api.bundle.scp.css
-C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\c00bojtfrn-i913chvi25.gz
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\04xspcb0av-61n19gt1b8.gz
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\ku1wusjqid-xtxxf3hu2r.gz
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\6j3svim5kq-t1cqhe9u97.gz
@@ -569,3 +568,4 @@ C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\Helpdesk.Api.pdb
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\ref\Helpdesk.Api.dll
+C:\Users\Formação\Documents\GitHub\helpdesk\helpdesk.api\obj\HPD\Debug\net9.0\compressed\c00bojtfrn-kvje54udgr.gz

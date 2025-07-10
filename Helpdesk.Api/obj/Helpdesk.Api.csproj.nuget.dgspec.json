@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
@@ -13,23 +12,7 @@
         "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk.api\\obj\\",
-=======
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
-        "projectName": "Helpdesk.Api",
-        "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
-        "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\obj\\",
->>>>>>> 707a393a3871edb563480154635cbb8a6a91b78d
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -135,11 +118,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
->>>>>>> 707a393a3871edb563480154635cbb8a6a91b78d
         }
       }
     }
