@@ -1669,7 +1669,11 @@ C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\Hel
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\ref\Helpdesk.Api.dll
 <<<<<<< HEAD
+C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-lmbsc02jq6.gz
+=======
+<<<<<<< HEAD
 =======
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-3jl9hs312n.gz
 >>>>>>> cb441c467595eb583dddf6d53eca92733eb7b57b
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-buy9rkwuxo.gz
+>>>>>>> db117e177f682c24b01e8fe39be3802a73fd65c3
