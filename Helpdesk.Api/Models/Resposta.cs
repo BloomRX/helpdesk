@@ -1,5 +1,5 @@
 using System;
-using Helpdesk.Api.Models; 
+using Helpdesk.Api.Models;
 
 
 public class Resposta
@@ -11,4 +11,5 @@ public class Resposta
 
     public int SolicitacaoId { get; set; }
     public Solicitacao Solicitacao { get; set; } = null!;
+    public bool Melhor { get; set; } = false;
 }

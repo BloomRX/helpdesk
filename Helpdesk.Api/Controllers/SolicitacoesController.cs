@@ -38,7 +38,7 @@ namespace Helpdesk.Api.Controllers
 
         // GET: /Solicitacoes/Details/5
         [AllowAnonymous]
-        public IActionResult Details(int id)
+        public IActionResult Detalhes(int id)
         {
             var sol = _context.Solicitacoes
                 .Include(s => s.Categoria)
@@ -63,17 +63,37 @@ namespace Helpdesk.Api.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Create(Solicitacao solicitacao)
         {
+            Console.WriteLine(">>>> POST Create acionado");
             if (!ModelState.IsValid)
             {
+                foreach (var erro in ModelState)
+                {
+                    Console.WriteLine($"Campo: {erro.Key}");
+                    foreach (var subErro in erro.Value.Errors)
+                    {
+                        Console.WriteLine($"  Erro: {subErro.ErrorMessage}");
+                    }
+                }
+
                 CarregarCategorias();
                 return View(solicitacao);
             }
 
+
             solicitacao.EmailUsuario = User.Identity!.Name!;
             solicitacao.DataAbertura = DateTime.Now;
+
+            Console.WriteLine(">>> Salvando no banco...");
+
             _context.Solicitacoes.Add(solicitacao);
             _context.SaveChanges();
+
+
+            Console.WriteLine(">>> Salvo com sucesso! ID = " + solicitacao.Id);
+
             return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Details), new { id = solicitacao.Id });
+
         }
 
         // GET: /Solicitacoes/Edit/5
@@ -96,14 +116,14 @@ namespace Helpdesk.Api.Controllers
             if (orig == null) return NotFound();
             if (!UsuarioPodeAlterar(orig)) return Forbid();
 
-            orig.Titulo      = form.Titulo;
-            orig.Descricao   = form.Descricao;
+            orig.Titulo = form.Titulo;
+            orig.Descricao = form.Descricao;
             orig.CategoriaId = form.CategoriaId;
-            orig.Status      = form.Status;
-
+            //orig.Status = form.Status;
+            
             _context.Solicitacoes.Update(orig);
             _context.SaveChanges();
-            return RedirectToAction(nameof(Details), new { id });
+            return RedirectToAction(nameof(Detalhes), new { id });
         }
 
         // GET: /Solicitacoes/Delete/5
@@ -143,7 +163,7 @@ namespace Helpdesk.Api.Controllers
             };
             _context.Respostas.Add(resposta);
             _context.SaveChanges();
-            return RedirectToAction(nameof(Details), new { id = solicitacaoId });
+            return RedirectToAction(nameof(Detalhes), new { id = solicitacaoId });
         }
 
         // Carrega a lista de categorias para os dropdowns
@@ -157,5 +177,43 @@ namespace Helpdesk.Api.Controllers
         private bool UsuarioPodeAlterar(Solicitacao s) =>
             User.IsInRole("Admin") ||
             s.EmailUsuario == User.Identity?.Name;
+            
+
+        // GET/POST: marcar como resolvida
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult MarcarResolvida(int id)
+        {
+            var sol = _context.Solicitacoes.Find(id);
+            if (sol == null) return NotFound();
+            if (!UsuarioPodeAlterar(sol)) return Forbid();
+
+            sol.Resolvida = true;
+            sol.DataResolucao = DateTime.Now;
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Detalhes), new { id });
+        }
+
+        // GET/POST: marcar uma resposta como melhor
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult MarcarMelhorResposta(int respostaId)
+        {
+            var r = _context.Respostas
+                    .Include(r => r.Solicitacao)
+                    .FirstOrDefault(r => r.Id == respostaId);
+            if (r == null) return NotFound();
+
+            // Só o autor da solicitação ou admin pode escolher a melhor
+            if (!UsuarioPodeAlterar(r.Solicitacao)) return Forbid();
+
+            // Desmarca qualquer outra
+            var outras = _context.Respostas
+                        .Where(x => x.SolicitacaoId == r.SolicitacaoId && x.Melhor);
+            foreach (var o in outras) o.Melhor = false;
+
+            r.Melhor = true;
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Detalhes), new { id = r.SolicitacaoId });
+        }
+
     }
 }

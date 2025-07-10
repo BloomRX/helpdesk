@@ -13,6 +13,13 @@
 
 <h2>Solicitações</h2>
 
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="Solicitacoes" asp-action="Create">
+        Nova Solicitação
+    </a>
+</div>
+
+
 <form method="get" class="row g-2 mb-3">
     <div class="col-auto">
         <select name="categoriaId" class="form-select">
@@ -38,7 +45,7 @@
     </div>
     <div class="col-auto">
         <input type="text" name="colaborador" class="form-control"
-               placeholder="Colaborador" value="@filtroColaborador" />
+            placeholder="Colaborador" value="@filtroColaborador" />
     </div>
     <div class="col-auto">
         <button type="submit" class="btn btn-primary">Filtrar</button>

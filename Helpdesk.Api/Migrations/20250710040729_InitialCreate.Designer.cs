@@ -3,6 +3,7 @@ using System;
 using Helpdesk.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Helpdesk.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250710040729_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
@@ -44,24 +47,19 @@ namespace Helpdesk.Api.Migrations
                     b.Property<DateTime>("DataAbertura")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime?>("DataResolucao")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EmailUsuario")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Resolvida")
+                    b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -121,9 +119,6 @@ namespace Helpdesk.Api.Migrations
                     b.Property<string>("EmailUsuario")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("Melhor")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("SolicitacaoId")
                         .HasColumnType("INTEGER");

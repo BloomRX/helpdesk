@@ -92,15 +92,13 @@ namespace Helpdesk.Api.Controllers
         }
 
         // LISTAGEM (apenas se logado)
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
-            var email = HttpContext.Session.GetString("UsuarioEmail");
-            if (string.IsNullOrEmpty(email))
-                return RedirectToAction("Login");
-
             var usuarios = _context.Usuarios.ToList();
             return View(usuarios);
         }
+
 
         [Authorize]
         [HttpPost]

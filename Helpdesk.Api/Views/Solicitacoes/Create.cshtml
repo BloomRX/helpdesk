@@ -8,6 +8,8 @@
 <p class="text-center">Use o formulário abaixo para criar um pedido de ajuda.</p>
 
 <form asp-action="Create" method="post" class="w-50 mx-auto" id="solicitacao_ajuda">
+    @Html.AntiForgeryToken()
+
     <div class="form-group mb-3">
         <label asp-for="Titulo">Assunto:</label>
         <input asp-for="Titulo" class="form-control" />
