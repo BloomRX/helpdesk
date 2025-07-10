@@ -1,70 +1,67 @@
 ﻿@model List<Helpdesk.Api.Models.Solicitacao>
-
 @{
     ViewData["Title"] = "Página Inicial";
 }
 
-<div class="row">
-    <!-- Coluna das Últimas Solicitações -->
-    <div class="col-md-6">
-        <h4>Últimas Solicitações</h4>
+<div class="container-glass">
+    <div class="row">
+        <!-- Coluna Últimas Solicitações -->
+        <div class="col-md-6">
+            <h4>Últimas Solicitações</h4>
 
-        @if (!Model.Any())
-        {
-            <p>Nenhuma solicitação registrada ainda.</p>
-        }
-        else
-        {
-            <ul class="list-group mb-3">
-                @foreach (var s in Model)
-                {
-                    <li class="list-group-item position-relative">
-                        <a asp-controller="Solicitacoes"
-                           asp-action="Detalhes"
-                           asp-route-id="@s.Id"
-                           class="stretched-link text-decoration-none">
-                            <strong>@s.Titulo</strong>
-                        </a>
-                        <br />
-                        <small class="text-muted">
-                            @s.Descricao  
+            @if (!Model.Any())
+            {
+                <p>Nenhuma solicitação registrada ainda.</p>
+            }
+            else
+            {
+                <ul class="list-group mb-3">
+                    @foreach (var s in Model)
+                    {
+                        <li class="list-group-item position-relative">
+                            <a asp-controller="Solicitacoes"
+                            asp-action="Detalhes"
+                            asp-route-id="@s.Id"
+                            class="stretched-link text-decoration-none solic-titulo">
+                                <strong>@s.Titulo</strong>
+                            </a>
                             <br />
-                            <em>Por @s.EmailUsuario em @s.DataAbertura.ToString("dd/MM/yyyy HH:mm")</em>
-                        </small>
-                    </li>
-                }
-            </ul>
-        }
+                            <small class="list-group-item">
+                                @s.Descricao  
+                                <br />
+                                <em>Por @s.EmailUsuario em @s.DataAbertura.ToString("dd/MM/yyyy HH:mm")</em>
+                            </small>
+                        </li>
+                    }
+                </ul>
+            }
 
-        <div class="mt-2">
-            <a class="btn btn-primary" asp-controller="Solicitacoes" asp-action="Create">
-                Nova Solicitação
-            </a>
-            <a class="btn btn-secondary" asp-controller="Solicitacoes" asp-action="Index">
-                Ver todas
-            </a>
+            <div class="mt-2">
+                <a class="btn" asp-controller="Solicitacoes" asp-action="Create">Nova Solicitação</a>
+                <a class="btn btn-secondary" asp-controller="Solicitacoes" asp-action="Index">Ver todas</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Coluna do Ranking -->
-    <div class="col-md-6">
-        <h4>Ranking de Colaboradores</h4>
+        <!-- Coluna Ranking -->
+        <div class="col-md-6">
+            <h4>Ranking de Colaboradores</h4>
 
-        @if (ViewBag.Ranking != null && ((IEnumerable<dynamic>)ViewBag.Ranking).Any())
-        {
-            <ul class="list-group mb-3">
-                @foreach (var item in (IEnumerable<dynamic>)ViewBag.Ranking)
-                {
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        @item.Email
-                        <span class="badge bg-primary rounded-pill">@item.Pontos ponto(s)</span>
-                    </li>
-                }
-            </ul>
-        }
-        else
-        {
-            <p>Nenhum colaborador pontuado ainda.</p>
-        }
+            @if (ViewBag.Ranking != null && ((IEnumerable<dynamic>)ViewBag.Ranking).Any())
+            {
+                <ul class="list-group mb-3">
+                    @foreach (var item in (IEnumerable<dynamic>)ViewBag.Ranking)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            @item.Email
+                            <span class="badge bg-primary rounded-pill">@item.Pontos ponto(s)</span>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>Nenhum colaborador pontuado ainda.</p>
+            }
+        </div>
     </div>
 </div>

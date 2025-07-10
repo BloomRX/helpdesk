@@ -3,28 +3,30 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<h2>Cadastrar Usuário</h2>
+<div class="container-glass">
+    <h2 class="text-center">Cadastrar Usuário</h2>
 
-<form asp-action="Create" method="post">
-    <label>Nome:</label><br />
-    <input asp-for="Nome" /><br />
-    <span asp-validation-for="Nome" style="color:red"></span><br />
+    <form asp-action="Create" method="post">
+        <label>Nome:</label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span><br />
 
-    <label>Email:</label><br />
-    <input asp-for="Email" /><br />
-    <span asp-validation-for="Email" style="color:red"></span><br />
+        <label>Email:</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span><br />
 
-    <label>Senha:</label><br />
-    <input asp-for="Senha" type="password" /><br />
-    <span asp-validation-for="Senha" style="color:red"></span><br />
+        <label>Senha:</label>
+        <input asp-for="Senha" type="password" class="form-control" />
+        <span asp-validation-for="Senha" class="text-danger"></span><br />
 
-    <label>Confirmar Senha:</label><br />
-    <input asp-for="ConfirmarSenha" type="password" /><br />
-    <span asp-validation-for="ConfirmarSenha" style="color:red"></span><br /><br />
+        <label>Confirmar Senha:</label>
+        <input asp-for="ConfirmarSenha" type="password" class="form-control" />
+        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span><br />
 
-    <button type="submit">Cadastrar</button>
-</form>
+        <button type="submit" class="btn mt-3">Cadastrar</button>
+    </form>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>
