@@ -30,3 +30,38 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+body {
+    background-image: url('/images/espaco.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #f1f1f1; /* fonte clara */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar, .dropdown-menu, .card, .modal-content, .table {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    color: #fff;
+}
+
+a, a.nav-link, a.dropdown-item {
+    color: #aad4ff !important;
+}
+
+a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+form label,
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+input, textarea, select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ccc;
+    color: #fff;
+}
