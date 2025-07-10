@@ -18,14 +18,27 @@ namespace Helpdesk.Api.Controllers
             _context = context;
         }
 
-        // Exibe as últimas 5 solicitações na home
         public IActionResult Index()
         {
+            // Últimas 5 solicitações
             var ultimasSolicitacoes = _context.Solicitacoes
                 .OrderByDescending(s => s.DataAbertura)
                 .Take(5)
                 .ToList();
 
+            // Ranking de usuários baseado em respostas
+            var ranking = _context.Respostas
+                .GroupBy(r => r.EmailUsuario)
+                .Select(g => new
+                {
+                    Email = g.Key,
+                    Pontos = g.Sum(r => r.Melhor ? 2 : 1)
+                })
+                .OrderByDescending(x => x.Pontos)
+                .Take(5)
+                .ToList();
+
+            ViewBag.Ranking = ranking;
             return View(ultimasSolicitacoes);
         }
 
