@@ -6348,19 +6348,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucas\\.nuget\\packages\\": {}
+    "C:\\Users\\Formação\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk1\\helpdesk.api\\Helpdesk.Api.csproj",
       "projectName": "Helpdesk.Api",
-      "projectPath": "E:\\Projects\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
-      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\helpdesk\\Helpdesk.Api\\obj\\",
+      "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk1\\helpdesk.api\\Helpdesk.Api.csproj",
+      "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk1\\helpdesk.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -6384,7 +6384,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -6462,7 +6462,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
