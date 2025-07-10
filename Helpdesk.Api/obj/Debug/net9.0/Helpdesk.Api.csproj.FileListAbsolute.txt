@@ -25,7 +25,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authorization.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.dll
@@ -36,8 +35,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cors.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -63,7 +60,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Identity.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Localization.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
@@ -106,9 +102,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.WebSockets.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.CSharp.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.dll
@@ -119,8 +112,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
@@ -134,23 +125,17 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Mi
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Hosting.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Http.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Localization.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Configuration.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Console.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Debug.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.EventLog.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.EventSource.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.ObjectPool.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.JSInterop.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Microsoft.Net.Http.Headers.dll
@@ -291,7 +276,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\Sy
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Text.Encoding.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Text.Encodings.Web.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Text.Json.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Text.RegularExpressions.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Threading.Channels.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\refs\System.Threading.dll
@@ -1124,3 +1108,7 @@ E:\Projects\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authoriz
 E:\Projects\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll
 E:\Projects\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
 E:\Projects\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Text.Json.dll
