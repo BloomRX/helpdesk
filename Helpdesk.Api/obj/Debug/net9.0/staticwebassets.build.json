@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oLk6UE+mKYy/DfiENKMUiAx0SDStEfZ0NTYnqxgIHuE=",
+  "Hash": "7laOA//V8XJ3SJqnyeSQuVocjbQfzMb/SexHSrBJviQ=",
   "Source": "Helpdesk.Api",
   "BasePath": "_content/Helpdesk.Api",
   "Mode": "Default",
@@ -584,12 +584,12 @@
       "OriginalItemSpec": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Identity": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-vt26gct16p.gz",
+      "Identity": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-3jl9hs312n.gz",
       "SourceId": "Helpdesk.Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Helpdesk.Api",
-      "RelativePath": "css/site#[.{fingerprint=vt26gct16p}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=3jl9hs312n}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -598,8 +598,8 @@
       "RelatedAsset": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "i9lnpqw3an",
-      "Integrity": "ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA=",
+      "Fingerprint": "fm3z9h0jck",
+      "Integrity": "6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vt26gct16p",
-      "Integrity": "0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c=",
+      "Fingerprint": "3jl9hs312n",
+      "Integrity": "wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2791,13 +2791,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-vt26gct16p.gz",
+      "Route": "css/site.3jl9hs312n.css",
+      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-3jl9hs312n.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001410437236"
+          "Quality": "0.001335113485"
         }
       ],
       "ResponseHeaders": [
@@ -2807,19 +2807,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "708"
+          "Value": "748"
         },
         {
           "Name": "ETag",
-          "Value": "\"ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA=\""
+          "Value": "\"6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2835,18 +2835,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c=\""
+          "Value": "W/\"wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "3jl9hs312n"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c="
+          "Value": "sha256-wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk="
         }
       ]
     },
     {
-      "Route": "css/site.css",
+      "Route": "css/site.3jl9hs312n.css",
       "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2856,7 +2864,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1745"
+          "Value": "1879"
         },
         {
           "Name": "Content-Type",
@@ -2864,121 +2872,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c=\""
+          "Value": "\"wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-vt26gct16p.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "708"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.vt26gct16p.css",
-      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-vt26gct16p.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001410437236"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "708"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vt26gct16p"
+          "Value": "3jl9hs312n"
         },
         {
           "Name": "label",
@@ -2986,13 +2894,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c="
+          "Value": "sha256-wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk="
         }
       ]
     },
     {
-      "Route": "css/site.vt26gct16p.css",
-      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\css\\site.css",
+      "Route": "css/site.3jl9hs312n.css.gz",
+      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-3jl9hs312n.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3001,7 +2909,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1745"
+          "Value": "748"
         },
         {
           "Name": "Content-Type",
@@ -3009,56 +2917,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c=\""
+          "Value": "\"6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vt26gct16p"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0yNrxV5YdJB9rG49j/BPzdpHJxQhoUGS/na7B+CG3/c="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.vt26gct16p.css.gz",
-      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-vt26gct16p.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "708"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 10 Jul 2025 16:49:37 GMT"
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3076,7 +2939,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vt26gct16p"
+          "Value": "3jl9hs312n"
         },
         {
           "Name": "label",
@@ -3084,7 +2947,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZuzIRbHu8N5hOT9Jy/xIaDlBLiXRSITlMclw2F6juzA="
+          "Value": "sha256-6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-3jl9hs312n.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001335113485"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "748"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1879"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wRli23xxBZTS6Ms09iglALn0hozjJ6Pu3fNjVOOSLSk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk6\\helpdesk.api\\obj\\Debug\\net9.0\\compressed\\c00bojtfrn-3jl9hs312n.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "748"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 17:41:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6bWAvUx7kuvouVCbmr6+671xg5idIlhn6jPABDtrHoY="
         }
       ]
     },

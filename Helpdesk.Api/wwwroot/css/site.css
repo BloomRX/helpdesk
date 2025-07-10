@@ -24,7 +24,7 @@ html {
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+  text-align: center;
 }
 
 body {
@@ -78,4 +78,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn:hover {
     background-color: rgba(0, 102, 204, 1);
+}
+
+.mt-3, .h2{
+  text-align: center;
+}
+
+#list-solic{
+  align-items: center;
 }
