@@ -80,10 +80,36 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 102, 204, 1);
 }
 
-.mt-3, .h2{
-  text-align: center;
+.container-glass {
+    background: rgba(0, 0, 0, 0.6); /* fundo preto translúcido */
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    max-width: 1000px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-#list-solic{
-  align-items: center;
+.container-glass h2, .container-glass h4 {
+    color: #00ffff;
+}
+
+.container-glass a, .container-glass .btn {
+    background: linear-gradient(145deg, #2200ff, #9400d3);
+    border: none;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container-glass a:hover, .container-glass .btn:hover {
+    background: linear-gradient(145deg, #00bfff, #7b68ee);
+    transform: scale(1.05);
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
 }
