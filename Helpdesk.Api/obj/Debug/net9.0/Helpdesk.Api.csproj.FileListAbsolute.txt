@@ -477,7 +477,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\rjsmcsh
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\bundle\Helpdesk.Api.styles.css
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\projectbundle\Helpdesk.Api.bundle.scp.css
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-i913chvi25.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\04xspcb0av-61n19gt1b8.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\ku1wusjqid-xtxxf3hu2r.gz
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\6j3svim5kq-t1cqhe9u97.gz
@@ -1112,3 +1111,4 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microso
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-ihdynycakv.gz

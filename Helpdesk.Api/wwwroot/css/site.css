@@ -17,10 +17,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  background-color: rgb(100, 100, 100);
-  margin-bottom: 60px;
-}
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -32,12 +28,12 @@ body {
 }
 
 body {
-    background-image: url('/images/espaco.jpg');
+    background-image: url('/images/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    color: #f1f1f1; /* fonte clara */
+    color: #ffffff; /* fonte clara */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -61,7 +57,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input, textarea, select {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid #888;
     color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.btn {
+    color: #fff;
+    border: 1px solid #3498db;
+    background-color: rgba(54, 0, 204, 0.555);
+}
+
+.btn:hover {
+    background-color: rgba(0, 102, 204, 1);
 }
