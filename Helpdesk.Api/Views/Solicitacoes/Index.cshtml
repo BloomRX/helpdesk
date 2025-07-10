@@ -11,7 +11,7 @@
     var filtroColaborador = Context.Request.Query["colaborador"].FirstOrDefault();
 }
 
-<h2>Solicitações</h2>
+<h2 class="h2">Solicitações</h2>
 
 <div class="mt-3">
     <a class="btn btn-primary" asp-controller="Solicitacoes" asp-action="Create">
@@ -21,39 +21,41 @@
 
 <br/>
 
-<form method="get" class="row g-2 mb-3">
-    <div class="col-auto">
-        <select name="categoriaId" class="form-select">
-            <option value="">Todas Categorias</option>
-            @foreach (var c in categorias)
-            {
-                <option value="@c.Id" selected="@(filtroCategoria == c.Id.ToString() ? "selected" : null)">
-                    @c.Nome
-                </option>
-            }
-        </select>
-    </div>
-    <div class="col-auto">
-        <select name="status" class="form-select">
-            <option value="">Todos Status</option>
-            @foreach (var st in statusList)
-            {
-                <option value="@st" selected="@(filtroStatus == st.ToString() ? "selected" : null)">
-                    @st
-                </option>
-            }
-        </select>
-    </div>
-    <div class="col-auto">
-        <input type="text" name="colaborador" class="form-control"
-            placeholder="Colaborador" value="@filtroColaborador" />
-    </div>
-    <div class="col-auto">
-        <button type="submit" class="btn btn-primary">Filtrar</button>
-    </div>
-</form>
+<div id="form-solic" class="d-flex justify-content-center">
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-auto">
+            <select name="categoriaId" class="form-select">
+                <option value="">Todas Categorias</option>
+                @foreach (var c in categorias)
+                {
+                    <option value="@c.Id" selected="@(filtroCategoria == c.Id.ToString() ? "selected" : null)">
+                        @c.Nome
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <select name="status" class="form-select">
+                <option value="">Todos Status</option>
+                @foreach (var st in statusList)
+                {
+                    <option value="@st" selected="@(filtroStatus == st.ToString() ? "selected" : null)">
+                        @st
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="colaborador" class="form-control"
+                placeholder="Colaborador" value="@filtroColaborador" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </form>
+</div>
 
-<ul class="list-group">
+<ul class="list-group" id="list-solic">
     @foreach (var s in Model)
     {
         <li class="list-group-item position-relative" style="max-width: 20cm;">

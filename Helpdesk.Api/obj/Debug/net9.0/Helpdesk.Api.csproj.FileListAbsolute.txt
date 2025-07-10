@@ -1111,7 +1111,6 @@ C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microso
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\bin\Debug\net9.0\System.Text.Json.dll
-C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-vt26gct16p.gz
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\bin\Debug\net9.0\appsettings.json
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\bin\Debug\net9.0\Helpdesk.Api.staticwebassets.runtime.json
@@ -1591,7 +1590,6 @@ C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\Hel
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\scopedcss\bundle\Helpdesk.Api.styles.css
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\scopedcss\projectbundle\Helpdesk.Api.bundle.scp.css
-C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-vt26gct16p.gz
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\04xspcb0av-61n19gt1b8.gz
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\ku1wusjqid-xtxxf3hu2r.gz
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\6j3svim5kq-t1cqhe9u97.gz
@@ -1670,3 +1668,12 @@ C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\ref
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\Helpdesk.Api.pdb
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\Helpdesk.Api.genruntimeconfig.cache
 C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\ref\Helpdesk.Api.dll
+<<<<<<< HEAD
+C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-lmbsc02jq6.gz
+=======
+<<<<<<< HEAD
+=======
+C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\compressed\c00bojtfrn-3jl9hs312n.gz
+>>>>>>> cb441c467595eb583dddf6d53eca92733eb7b57b
+C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-buy9rkwuxo.gz
+>>>>>>> db117e177f682c24b01e8fe39be3802a73fd65c3
