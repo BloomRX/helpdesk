@@ -17,81 +17,81 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Helpdesk.Api
 build_property.RootNamespace = Helpdesk.Api
-build_property.ProjectDir = C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\
+build_property.ProjectDir = E:\Projects\helpdesk\Helpdesk.Api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api
+build_property.MSBuildProjectDirectory = E:\Projects\helpdesk\Helpdesk.Api
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Categorias/Create.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Categorias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Categorias/Index.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Categorias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Home/Index.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Home/Privacy.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Shared/Error.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Solicitacoes/Create.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Solicitacoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29saWNpdGFjb2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Solicitacoes/Delete.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Solicitacoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29saWNpdGFjb2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Solicitacoes/Detalhes.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Solicitacoes/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29saWNpdGFjb2VzXERldGFsaGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Solicitacoes/Edit.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Solicitacoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29saWNpdGFjb2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Solicitacoes/Index.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Solicitacoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29saWNpdGFjb2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Usuarios/Create.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Usuarios/Index.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Usuarios/Login.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Usuarios/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/_ViewImports.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/_ViewStart.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Formação/Desktop/Lucas/helpdesk/Helpdesk.Api/Views/Shared/_Layout.cshtml]
+[E:/Projects/helpdesk/Helpdesk.Api/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-thq38d4qmc

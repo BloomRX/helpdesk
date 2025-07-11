@@ -31,14 +31,23 @@
                     {
                         <span class="badge bg-light text-dark">Melhor resposta</span>
                     }
+                        <div class="d-flex gap-2 mt-2">
+                            @if ((User.Identity?.Name == Model.EmailUsuario || User.IsInRole("Admin")) && !resposta.Melhor)
+                            {
+                                <form asp-action="MarcarMelhorResposta" method="post" class="d-inline-block">
+                                    <input type="hidden" name="respostaId" value="@resposta.Id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-light">Marcar como melhor</button>
+                                </form>
+                            }
 
-                    @if ((User.Identity?.Name == Model.EmailUsuario || User.IsInRole("Admin")) && !resposta.Melhor)
-                    {
-                        <form asp-action="MarcarMelhorResposta" method="post" class="d-inline">
-                            <input type="hidden" name="respostaId" value="@resposta.Id" />
-                            <button type="submit" class="btn btn-sm btn-outline-light">Marcar como melhor</button>
-                        </form>
-                    }
+                            @if (User.IsInRole("Admin") || resposta.EmailUsuario == User.Identity?.Name || Model.EmailUsuario == User.Identity?.Name)
+                            {
+                                <form asp-action="RemoverResposta" asp-controller="Solicitacoes" method="post" class="d-inline-block" onsubmit="return confirm('Tem certeza que deseja remover esta resposta?');">
+                                    <input type="hidden" name="id" value="@resposta.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger">Remover</button>
+                                </form>
+                            }
+                        </div>
                 </li>
             }
         </ul>
@@ -51,14 +60,20 @@
     <hr />
     <h4>Responder</h4>
 
-    <form asp-action="Responder" method="post">
-        <input type="hidden" name="solicitacaoId" value="@Model.Id" />
-        <textarea name="conteudo" class="form-control" rows="3" required></textarea>
-        <br />
-        <button type="submit" class="btn btn-primary">Responder</button>
-    </form>
+    @if (!Model.Resolvida)
+    {
+        <form asp-action="Responder" method="post">
+            <input type="hidden" name="solicitacaoId" value="@Model.Id" />
+            <textarea name="conteudo" class="form-control" rows="3" required></textarea>
+            <br />
+            <button type="submit" class="btn btn-primary">Responder</button>
+        </form>
+    }
+    else
+    {
+        <p class="form label">Esta solicitação já foi resolvida. Não é possível adicionar novas respostas.</p>
+    }
 
-    <hr />
 
     @* Ações do autor ou admin *@
     @if (User.Identity.IsAuthenticated &&

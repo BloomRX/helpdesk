@@ -25,16 +25,20 @@ namespace Helpdesk.Api.Controllers
             if (categoriaId.HasValue)
                 q = q.Where(s => s.CategoriaId == categoriaId.Value);
 
-            if (status.HasValue)
-                q = q.Where(s => s.Status == status.Value);
-
             if (!string.IsNullOrWhiteSpace(colaborador))
                 q = q.Where(s => s.EmailUsuario == colaborador);
 
+            var lista = q.ToList(); // Executa a query no banco e carrega os dados
+
+            if (status.HasValue)
+                lista = lista.Where(s => s.Status == status.Value).ToList(); // Agora pode filtrar pela propriedade [NotMapped]
+
             ViewBag.Categorias = _context.Categorias.ToList();
             ViewBag.StatusList = Enum.GetValues<StatusSolicitacao>();
-            return View(q.OrderByDescending(s => s.DataAbertura).ToList());
+
+            return View(lista.OrderByDescending(s => s.DataAbertura).ToList());
         }
+
 
         // GET: /Solicitacoes/Details/5
         [AllowAnonymous]
@@ -91,8 +95,8 @@ namespace Helpdesk.Api.Controllers
 
             Console.WriteLine(">>> Salvo com sucesso! ID = " + solicitacao.Id);
 
-            return RedirectToAction(nameof(Index));
-            //return RedirectToAction(nameof(Details), new { id = solicitacao.Id });
+            //return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Detalhes), new { id = solicitacao.Id });
 
         }
 
@@ -213,6 +217,25 @@ namespace Helpdesk.Api.Controllers
             r.Melhor = true;
             _context.SaveChanges();
             return RedirectToAction(nameof(Detalhes), new { id = r.SolicitacaoId });
+        }
+        
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult RemoverResposta(int id)
+        {
+            var resposta = _context.Respostas
+                .Include(r => r.Solicitacao)
+                .FirstOrDefault(r => r.Id == id);
+
+            if (resposta == null) return NotFound();
+
+            // Somente o autor da solicitação ou um admin pode deletar
+            if (!UsuarioPodeAlterar(resposta.Solicitacao))
+                return Forbid();
+
+            _context.Respostas.Remove(resposta);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Detalhes), new { id = resposta.SolicitacaoId });
         }
 
     }

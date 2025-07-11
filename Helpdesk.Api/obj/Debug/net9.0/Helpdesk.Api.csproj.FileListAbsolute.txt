@@ -1029,8 +1029,6 @@ E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\bundle\Helpdesk.Api.styles.css
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\scopedcss\projectbundle\Helpdesk.Api.bundle.scp.css
-E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-i913chvi25.gz
-E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\04xspcb0av-61n19gt1b8.gz
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\ku1wusjqid-xtxxf3hu2r.gz
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\6j3svim5kq-bqjiyaj88i.gz
 E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\fqlq1hltiz-c2jlpeoesf.gz
@@ -1675,3 +1673,4 @@ C:\Users\Formação\Documents\GitHub\helpdesk6\helpdesk.api\obj\Debug\net9.0\com
 >>>>>>> cb441c467595eb583dddf6d53eca92733eb7b57b
 >>>>>>> db117e177f682c24b01e8fe39be3802a73fd65c3
 C:\Users\Formação\Desktop\Lucas\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-s2zsajz1oh.gz
+E:\Projects\helpdesk\Helpdesk.Api\obj\Debug\net9.0\compressed\c00bojtfrn-s2zsajz1oh.gz
