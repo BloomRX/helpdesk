@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj": {}
   },
   "projects": {
@@ -12,17 +13,36 @@
         "projectPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\Helpdesk.Api.csproj",
         "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Formação\\Desktop\\Lucas\\helpdesk\\Helpdesk.Api\\obj\\",
+=======
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "projectName": "Helpdesk.Api",
+        "projectPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk\\helpdesk.api\\Helpdesk.Api.csproj",
+        "packagesPath": "C:\\Users\\Formação\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Formação\\Documents\\GitHub\\helpdesk\\helpdesk\\helpdesk.api\\obj\\",
+>>>>>>> b58f5bcc0bd4791e089cf9a973d10922c62a3ab4
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\Formação\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> b58f5bcc0bd4791e089cf9a973d10922c62a3ab4
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -119,7 +139,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
