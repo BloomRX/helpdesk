@@ -3,19 +3,34 @@
 <h2>Usuários Cadastrados</h2>
 
 <table border="1" cellpadding="5">
-    <tr>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Tipo</th>
-    </tr>
-    @foreach (var u in Model)
-    {
+    <thead>
         <tr>
-            <td>@u.Nome</td>
-            <td>@u.Email</td>
-            <td>@u.Tipo</td>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Tipo</th>
+            <th>Ações</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Nome</td>
+                <td>@u.Email</td>
+                <td>@u.Tipo</td>
+                <td>
+                    @* Impede excluir a si mesmo ou admin principal *@
+                    @if (u.Email != User.FindFirst("Email")?.Value && u.Email.ToLower() != "admin@admin.com")
+                    {
+                        <form asp-action="Delete" asp-controller="Usuarios" method="post" onsubmit="return confirm('Deseja realmente excluir este usuário?');">
+                            <input type="hidden" name="id" value="@u.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
 <p><a href="/Usuarios/Logout">Sair</a></p>

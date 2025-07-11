@@ -40,25 +40,30 @@ namespace Helpdesk.Api.Controllers
             }
 
             // Garante que admin@admin.com seja sempre admin
-            var tipo = usuario.Email.ToLower() == "admin@admin.com" ? "Admin" : usuario.Tipo;
+            if (usuario.Email.ToLower() == "admin@admin.com")
+            {
+                usuario.Tipo = "Admin";
+                _context.SaveChanges();
+            }
+
+            var tipo = usuario.Tipo;
 
             // Claims
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, usuario.Nome), 
+                new Claim(ClaimTypes.Name, usuario.Nome),
                 new Claim(ClaimTypes.Email, usuario.Email),
                 new Claim(ClaimTypes.Role, tipo)
             };
 
-
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
 
-            // Login com cookies
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
             return RedirectToAction("Index", "Solicitacoes");
         }
+
 
 
 
@@ -107,5 +112,21 @@ namespace Helpdesk.Api.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
+        
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
+
+            if (usuario == null || usuario.Email.ToLower() == "admin@admin.com")
+                return NotFound();
+
+            _context.Usuarios.Remove(usuario);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
